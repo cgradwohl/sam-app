@@ -16,7 +16,8 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent): Promise<APIGat
         response = {
             statusCode: 200,
             body: JSON.stringify({
-                message: 'hello world',
+                message: 'hello creature ...',
+                event,
             }),
         };
     } catch (err: unknown) {
@@ -24,7 +25,7 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent): Promise<APIGat
         response = {
             statusCode: 500,
             body: JSON.stringify({
-                message: err instanceof Error ? err.message : 'some error happened',
+                message: err instanceof Error ? err.message : 'OH NO!',
             }),
         };
     }
